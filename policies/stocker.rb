@@ -10,7 +10,10 @@ cookbook 'nodejs'
 cookbook 'redis'
 cookbook 'nginx'
 cookbook 'openssh'
+cookbook 'poise-monit'
 
 run_list 'role[setup]',
 'role[db]',
-'role[web'
+'role[web',
+'role[security]',
+'role[monitoring]'

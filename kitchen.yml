@@ -6,7 +6,7 @@ driver:
     hypervisor-type: apple
 
 provisioner:
-  name: chef_solo
+  name: chef_zero
   product_name: chef
   product_version: 17.9.26
   channel: current
@@ -15,6 +15,8 @@ provisioner:
   always_update_cookbooks: true
   root_path: /Users/Shared/kitchen
   policyfile_path: ./policies/stocker.rb
+  encrypted_data_bag_secret_key_path: ./encrypted_data_bag_secret
+  data_bags_path: ./data_bags
 
 verifier:
   name: inspec
@@ -34,9 +36,5 @@ platforms:
 
 suites:
   - name: default
-    attributes:
-      parallels:
-        version: 17.1.2-51548
-        license:
-          installation: false
+    
 

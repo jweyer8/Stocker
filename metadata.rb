@@ -16,5 +16,6 @@ depends 'nodejs'
 depends 'redis'
 depends 'nginx'
 depends 'openssh'
+depends 'poise-monit'
 
 

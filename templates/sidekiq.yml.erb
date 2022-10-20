@@ -1,0 +1,9 @@
+---
+<%= @environment %>
+    :verbose: true
+    :logfile: log/sidekiq.log
+    :concurrency: 1
+    :strict: false
+    :pidfile: tmp/pids/sidekiq.log 
+    :queues: 
+        - [default, 1]

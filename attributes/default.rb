@@ -49,3 +49,12 @@ override[:nodejs][:version] = '16.9.0'
 # SSH Config
 default[:openssh][:server][:password_authentication] = 'no'
 default[:openssh][:server][:print_motd] = 'no'
+
+# Monit Configs
+default[:monit][:username] = data_bag_item('config', node.environment)['monit']['username']
+default[:monit][:password] = data_bag_item('config', node.environment)['monit']['password']
+default[:monit][:interval] = 60
+default[:monit][:port] = 2812
+default[:monit][:logfile] = ::File.join('/', 'var', 'log', 'monit.log')
+default[:monit][:event_slots] = 1000
+
